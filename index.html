@@ -9,13 +9,45 @@
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">Всички говорят за бъдещето на AI. Малцина го строят.</h1>
+        <!-- Aurora Background Effect -->
+        <div class="hero-aurora"></div>
+        <!-- Particles Background -->
+        <canvas id="hero-particles" class="hero-particles"></canvas>
+        
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <span class="badge-text">🚀 Нова Ера на Предприемачеството</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Всички говорят за бъдещето на AI.</span>
+                <span class="gradient-text-delay">Малцина го строят.</span>
+            </h1>
             <p class="hero-subtitle">
                 Най-накрая е възможно да изградиш собствен бизнес и свобода чрез AI —
-                <strong>без страх от провал, без празни обещания и без нужда да започваш от нулата.</strong>
+                <strong class="highlight-text">без страх от провал, без празни обещания и без нужда да започваш от нулата.</strong>
             </p>
-            <a href="#cta" class="cta-button">Влез във Формулата</a>
+            <div class="hero-cta-wrapper">
+                <a href="#cta" class="cta-button hero-cta">
+                    <span>Влез във Формулата</span>
+                    <svg class="cta-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">AI Асистента</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Седмици</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">50K</div>
+                    <div class="stat-label">лв Финансиране</div>
+                </div>
+            </div>
         </div>
     </section>
 

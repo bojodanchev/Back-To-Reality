@@ -59,62 +59,251 @@ p {
     margin-right: auto;
 }
 
-/* Hero Section */
+/* Hero Section - Enhanced with Shadcn-inspired effects */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #000000 0%, #1a0a2e 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #000000 100%);
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 }
 
-.hero::before {
-    content: '';
+/* Aurora Background Effect - Shadcn-inspired */
+.hero-aurora {
     position: absolute;
-    top: -50%;
-    right: -50%;
+    inset: -10px;
+    background-image: 
+        repeating-linear-gradient(100deg, 
+            rgba(59, 130, 246, 0.15) 10%, 
+            rgba(165, 180, 252, 0.2) 15%, 
+            rgba(147, 197, 253, 0.15) 20%, 
+            rgba(221, 214, 254, 0.2) 25%, 
+            rgba(96, 165, 250, 0.15) 30%);
+    background-size: 300% 200%;
+    background-position: 50% 50%;
+    animation: aurora 60s linear infinite;
+    opacity: 0.6;
+    filter: blur(40px);
+    mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+    z-index: 1;
+}
+
+@keyframes aurora {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+/* Particles Canvas */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-    animation: pulse 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
 }
 
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 0.8;
-    }
-}
-
-.hero .container {
+.hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    max-width: 1200px;
+    padding: 2rem 20px;
 }
 
+/* Hero Badge */
+.hero-badge {
+    display: inline-block;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.badge-text {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 50px;
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1);
+}
+
+/* Hero Title with Animated Gradient */
 .hero-title {
-    background: var(--gradient-gold);
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+    line-height: 1.1;
+}
+
+.hero-title span {
+    display: block;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, 
+        #FFD700 0%, 
+        #FFA500 20%, 
+        #FFD700 50%, 
+        #FFA500 80%, 
+        #FFD700 100%);
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 2rem;
-    animation: fadeInUp 1s ease-out;
+    animation: gradientShift 3s ease infinite, fadeInUp 1s ease-out 0.3s backwards;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
 }
 
+.gradient-text-delay {
+    background: linear-gradient(90deg, 
+        #00D4FF 0%, 
+        #B026FF 20%, 
+        #00D4FF 50%, 
+        #B026FF 80%, 
+        #00D4FF 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite 0.5s, fadeInUp 1s ease-out 0.5s backwards;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Hero Subtitle */
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     color: var(--light-gray);
     margin-bottom: 3rem;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeInUp 1s ease-out 0.3s backwards;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+    line-height: 1.7;
+}
+
+.highlight-text {
+    color: var(--gold);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-gold);
+    opacity: 0.5;
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scaleX(0.8);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scaleX(1);
+    }
+}
+
+/* Hero CTA Wrapper */
+.hero-cta-wrapper {
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out 0.8s backwards;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: visible;
+}
+
+.cta-arrow {
+    transition: transform 0.3s ease;
+}
+
+.hero-cta:hover .cta-arrow {
+    transform: translateX(5px);
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    animation: fadeInUp 1s ease-out 1s backwards;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    animation: countUp 1s ease-out;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInUp {
@@ -1142,8 +1331,25 @@ section:nth-child(even) {
         min-height: 80vh;
     }
 
+    .hero-stats {
+        gap: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
     .hero-subtitle {
         font-size: 1.1rem;
+    }
+
+    .badge-text {
+        font-size: 0.8rem;
+        padding: 6px 16px;
     }
 
     .cta-button {
@@ -1240,3 +1446,4 @@ html {
     background: var(--gold);
     color: var(--black);
 }
+
