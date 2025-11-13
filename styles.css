@@ -55,6 +55,8 @@ h3 {
 p {
     margin-bottom: 1rem;
     max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Hero Section */
@@ -209,6 +211,7 @@ section:nth-child(even) {
     max-width: 700px;
     margin: 0 auto 3rem;
     font-size: 1.1rem;
+    text-align: left;
 }
 
 .problem-list li {
@@ -254,6 +257,11 @@ section:nth-child(even) {
     margin: 0 auto 4rem;
 }
 
+.subtitle-box p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .subtitle-box h3 {
     color: var(--neon-blue);
     margin-bottom: 1.5rem;
@@ -264,6 +272,11 @@ section:nth-child(even) {
     max-width: 900px;
     margin: 0 auto 5rem;
     font-size: 1.1rem;
+}
+
+.explanation p {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Pillars */
@@ -363,11 +376,13 @@ section:nth-child(even) {
     font-weight: 700;
     color: var(--gold);
     margin-bottom: 5px;
+    max-width: none;
 }
 
 .flow-step span {
     font-size: 0.9rem;
     color: var(--light-gray);
+    display: block;
 }
 
 .flow-arrow {
@@ -584,6 +599,8 @@ section:nth-child(even) {
 .final-cta-box p {
     margin: 0 auto 1rem;
     font-size: 1.1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Shows Section */
@@ -596,6 +613,11 @@ section:nth-child(even) {
     max-width: 900px;
     margin: 0 auto 2rem;
     font-size: 1.1rem;
+}
+
+.shows-intro p, .shows-mission p {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .shows-grid {
@@ -611,6 +633,11 @@ section:nth-child(even) {
     border-radius: 15px;
     padding: 40px;
     transition: all 0.3s ease;
+}
+
+.show p {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .show:hover {
@@ -699,6 +726,12 @@ section:nth-child(even) {
     margin: 0 auto 3rem;
 }
 
+.guarantee-intro br {
+    display: block;
+    content: "";
+    margin: 0.5rem 0;
+}
+
 .guarantee-box {
     background: rgba(0, 212, 255, 0.05);
     border: 3px solid var(--neon-blue);
@@ -707,6 +740,11 @@ section:nth-child(even) {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 4rem;
+}
+
+.guarantee-box p {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .guarantee-icon {
@@ -736,6 +774,11 @@ section:nth-child(even) {
     margin: 0 auto 3rem;
 }
 
+.urgency-box p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .urgency-box h3 {
     color: var(--gold);
     margin-bottom: 1.5rem;
@@ -752,6 +795,11 @@ section:nth-child(even) {
     max-width: 700px;
     margin: 0 auto 3rem;
     text-align: center;
+}
+
+.urgency-benefits p {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .urgency-benefits h3 {
@@ -790,6 +838,11 @@ section:nth-child(even) {
     max-width: 700px;
     margin: 3rem auto;
     font-size: 1.1rem;
+}
+
+.emotional-final p {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .trust-line {
@@ -898,13 +951,20 @@ section:nth-child(even) {
     font-size: 1.2rem;
 }
 
+.final-message p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .final-needs {
     margin: 3rem 0;
     font-size: 1.3rem;
+    text-align: center;
 }
 
 .final-needs p {
     margin: 1rem auto;
+    max-width: 900px;
 }
 
 .epic-quote {
@@ -921,12 +981,19 @@ section:nth-child(even) {
     background-clip: text;
     line-height: 1.4;
     margin: 1rem auto;
+    max-width: 900px;
 }
 
 .final-choice {
     text-align: center;
     font-size: 1.5rem;
     margin: 3rem 0;
+}
+
+.final-choice p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
 }
 
 /* Footer */
