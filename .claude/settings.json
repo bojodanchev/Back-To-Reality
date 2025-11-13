@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "ssh-backtoreality": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-ssh",
+        "--host", "ssh.superhosting.bg",
+        "--port", "22",
+        "--user", "YOUR_CPANEL_USERNAME",
+        "--auth", "key",
+        "--identityFile", "/Users/bojodanchev/.ssh/id_rsa",
+        "--workdir", "/home/YOUR_CPANEL_USERNAME/public_html"
+      ]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-fetch"]
+    },
+    "fs-local": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "--root", "/Users/bojodanchev/BackToRealityWEB"
+      ]
+    }
+  }
+}
