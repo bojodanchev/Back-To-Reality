@@ -128,34 +128,133 @@ p {
     }
 }
 
-/* CTA Button */
+/* CTA Button - Shadcn-inspired design */
 .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 18px 40px;
     background: var(--gradient-gold);
     color: var(--black);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.1rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+    position: relative;
+    overflow: hidden;
     animation: fadeInUp 1s ease-out 0.6s backwards;
+    white-space: nowrap;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
+    background: linear-gradient(135deg, #FFE135 0%, #FFB800 100%);
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+}
+
+.cta-button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2);
 }
 
 .cta-button.large {
     padding: 22px 50px;
     font-size: 1.3rem;
+    border-radius: 10px;
 }
 
 .cta-button.hero-size {
     padding: 25px 60px;
     font-size: 1.4rem;
+    border-radius: 12px;
+}
+
+/* Hero section button centering */
+.hero .container {
+    text-align: center;
+}
+
+.hero .cta-button {
+    margin-top: 2rem;
+}
+
+/* Results section button centering */
+.results-section .container {
+    text-align: center;
+}
+
+.results-section .cta-button {
+    margin: 2rem auto 0;
+}
+
+/* Bonuses section button centering */
+.final-cta-box {
+    text-align: center;
+}
+
+.final-cta-box .cta-button {
+    margin-top: 2rem;
+}
+
+/* Shows section button centering */
+.shows-section .container {
+    text-align: center;
+}
+
+.shows-section .cta-button {
+    margin: 2rem auto 0;
+}
+
+/* Guarantee section button centering */
+.guarantee-section .container {
+    text-align: center;
+}
+
+.guarantee-section .cta-button {
+    margin: 2rem auto 1rem;
+}
+
+/* FAQ section button centering */
+.faq-section .container {
+    text-align: center;
+}
+
+.faq-section .cta-button {
+    margin: 2rem auto 0;
+}
+
+/* Final call section button centering */
+.final-call-section .container {
+    text-align: center;
+}
+
+.final-call-section .cta-button {
+    margin: 2rem auto 0;
 }
 
 .cta-subtitle {
