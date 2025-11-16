@@ -1,0 +1,14 @@
+{
+  "name": "back-to-reality",
+  "version": "1.0.0",
+  "description": "Back to Reality - Трансформацията, която те превръща от мечтател в създател",
+  "type": "module",
+  "scripts": {
+    "build": "node build-analytics.js"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  },
+  "devDependencies": {}
+}
+
